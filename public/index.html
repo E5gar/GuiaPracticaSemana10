@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HuancaRepair | Reparacion de equipos electronicos en Huancayo</title>
+  <meta name="description" content="Tienda de reparacion de equipos electronicos en Av. Giraldez N 1850, Huancayo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Inter:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/productos.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="contenedor nav-interior">
+      <a href="#inicio" class="marca">
+        <i data-lucide="wrench"></i>
+        <span>HuancaRepair</span>
+      </a>
+      <div class="nav-enlaces" id="nav-enlaces">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="nav-acciones">
+        <a href="#contacto" class="boton boton-primario boton-pequeno">Solicitar diagnostico</a>
+        <button class="nav-menu" id="nav-menu" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero fondo-puntos" id="inicio">
+      <div class="contenedor hero-interior">
+        <div class="hero-texto aparecer">
+          <span class="etiqueta"><i data-lucide="map-pin"></i>Av. Giraldez N 1850, Huancayo</span>
+          <h1>Tu equipo electronico, de vuelta en <em>funcionamiento</em></h1>
+          <p class="lead">Diagnostico gratuito, repuestos probados y reparaciones con garantia para celulares, laptops, computadoras y consolas.</p>
+          <div class="hero-botones">
+            <a href="#servicios" class="boton boton-primario">Ver servicios<i data-lucide="arrow-right"></i></a>
+            <a href="#contacto" class="boton boton-secundario">Como llegar</a>
+          </div>
+        </div>
+        <div class="hero-imagen aparecer">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80" alt="Lorem ipsum dolor sit amet">
+        </div>
+      </div>
+    </section>
+
+    <section class="confianza">
+      <div class="contenedor confianza-grilla">
+        <div class="confianza-item">
+          <i data-lucide="microscope"></i>
+          <div>
+            <h3>Diagnostico gratuito</h3>
+            <p>Revisamos tu equipo sin costo y te damos un presupuesto claro.</p>
+          </div>
+        </div>
+        <div class="confianza-item">
+          <i data-lucide="shield-check"></i>
+          <div>
+            <h3>Garantia escrita</h3>
+            <p>Hasta 6 meses de garantia en repuestos y mano de obra.</p>
+          </div>
+        </div>
+        <div class="confianza-item">
+          <i data-lucide="clock"></i>
+          <div>
+            <h3>Entrega rapida</h3>
+            <p>La mayoria de reparaciones se entregan el mismo dia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="servicios">
+      <div class="contenedor">
+        <header class="seccion-cabecera">
+          <span class="etiqueta">Servicios</span>
+          <h2>Reparamos lo que mas usas</h2>
+          <p class="lead">Tarifas referenciales desde el monto indicado. El precio final se confirma tras el diagnostico.</p>
+        </header>
+        <div class="grilla grilla-servicios" id="servicios-lista">
+          <p class="estado-vacio">Cargando servicios...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion-superficie" id="proceso">
+      <div class="contenedor">
+        <header class="seccion-cabecera">
+          <span class="etiqueta">Proceso</span>
+          <h2>Cuatro pasos, sin sorpresas</h2>
+        </header>
+        <div class="grilla grilla-pasos">
+          <article class="paso">
+            <span class="paso-numero">01</span>
+            <i data-lucide="clipboard-list"></i>
+            <h3>Recepcion</h3>
+            <p>Registramos tu equipo y el problema que presenta.</p>
+          </article>
+          <article class="paso">
+            <span class="paso-numero">02</span>
+            <i data-lucide="search"></i>
+            <h3>Diagnostico</h3>
+            <p>Un tecnico revisa el equipo y te entrega un presupuesto.</p>
+          </article>
+          <article class="paso">
+            <span class="paso-numero">03</span>
+            <i data-lucide="cpu"></i>
+            <h3>Reparacion</h3>
+            <p>Reemplazamos o reparamos solo con tu autorizacion.</p>
+          </article>
+          <article class="paso">
+            <span class="paso-numero">04</span>
+            <i data-lucide="package-check"></i>
+            <h3>Entrega</h3>
+            <p>Probamos todo contigo y te damos la garantia por escrito.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="productos">
+      <div class="contenedor">
+        <header class="seccion-cabecera">
+          <span class="etiqueta">Productos</span>
+          <h2>Repuestos y accesorios en tienda</h2>
+          <p class="lead">Inventario conectado a la API REST. Crea, edita o elimina productos desde este panel.</p>
+        </header>
+
+        <div class="panel-productos">
+          <form class="formulario" id="formulario-producto" novalidate>
+            <div class="formulario-titulo">
+              <h3 id="formulario-titulo">Nuevo producto</h3>
+              <span class="etiqueta" id="formulario-modo">Crear</span>
+            </div>
+            <input type="hidden" id="producto-id">
+            <label class="campo">
+              <span>Nombre</span>
+              <input type="text" id="producto-nombre" required maxlength="120">
+            </label>
+            <label class="campo">
+              <span>Categoria</span>
+              <input type="text" id="producto-categoria" required maxlength="60">
+            </label>
+            <div class="campo-doble">
+              <label class="campo">
+                <span>Precio (S/)</span>
+                <input type="number" id="producto-precio" min="0" step="0.01" required>
+              </label>
+              <label class="campo">
+                <span>Stock</span>
+                <input type="number" id="producto-stock" min="0" step="1" required>
+              </label>
+            </div>
+            <label class="campo">
+              <span>URL de imagen</span>
+              <input type="url" id="producto-imagen">
+            </label>
+            <label class="campo">
+              <span>Descripcion</span>
+              <textarea id="producto-descripcion" rows="3"></textarea>
+            </label>
+            <div class="formulario-botones">
+              <button type="submit" class="boton boton-primario" id="boton-guardar"><i data-lucide="save"></i>Guardar</button>
+              <button type="button" class="boton boton-secundario" id="boton-cancelar"><i data-lucide="x"></i>Cancelar</button>
+            </div>
+            <p class="mensaje" id="mensaje" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="productos-contenedor">
+            <div class="productos-herramientas">
+              <label class="campo campo-filtro">
+                <span>Filtrar por categoria</span>
+                <select id="filtro-categoria">
+                  <option value="">Todas</option>
+                </select>
+              </label>
+              <span class="etiqueta" id="contador-productos">0 productos</span>
+            </div>
+            <div class="grilla grilla-productos" id="productos-lista">
+              <p class="estado-vacio">Cargando productos...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion-oscura">
+      <div class="contenedor oscura-interior">
+        <div>
+          <span class="etiqueta etiqueta-clara">Atencion en tienda</span>
+          <h2>Trae tu equipo hoy, retiralo reparado.</h2>
+          <p class="lead lead-claro">Atendemos de lunes a sabado. Si no puedes venir, coordinamos recojo a domicilio dentro de Huancayo.</p>
+        </div>
+        <a href="#contacto" class="boton boton-claro">Ver ubicacion<i data-lucide="arrow-right"></i></a>
+      </div>
+    </section>
+
+    <section class="seccion" id="contacto">
+      <div class="contenedor contacto-grilla">
+        <div>
+          <header class="seccion-cabecera">
+            <span class="etiqueta">Contacto</span>
+            <h2>Visitanos en Huancayo</h2>
+          </header>
+          <ul class="contacto-lista">
+            <li>
+              <i data-lucide="map-pin"></i>
+              <div>
+                <h3>Direccion</h3>
+                <p>Av. Giraldez N 1850, Huancayo, Junin</p>
+              </div>
+            </li>
+            <li>
+              <i data-lucide="clock"></i>
+              <div>
+                <h3>Horario</h3>
+                <p>Lunes a sabado, de 9:00 a 20:00</p>
+              </div>
+            </li>
+            <li>
+              <i data-lucide="phone"></i>
+              <div>
+                <h3>Telefono</h3>
+                <p>+51 964 000 000</p>
+              </div>
+            </li>
+            <li>
+              <i data-lucide="mail"></i>
+              <div>
+                <h3>Correo</h3>
+                <p>contacto@huancarepair.pe</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="contacto-imagen">
+          <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=1200&q=80" alt="Lorem ipsum dolor sit amet">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <a href="#inicio" class="marca marca-clara">
+        <i data-lucide="wrench"></i>
+        <span>HuancaRepair</span>
+      </a>
+      <div class="pie-enlaces">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <p>Av. Giraldez N 1850, Huancayo. Todos los derechos reservados.</p>
+      <p>Universidad Nacional del Centro del Perú - Facultad de Ingeniería de Sistemas</p>
+      <p>Desarrollo de Aplicaciones Web - IX Semestre</p>
+      <p>- Gago Uribe Edgar Robert</p>
+    </div>
+  </footer>
+</body>
+</html>
