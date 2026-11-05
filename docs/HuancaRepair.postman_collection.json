@@ -1,0 +1,178 @@
+{
+  "info": {
+    "name": "HuancaRepair API",
+    "description": "Coleccion de pruebas de la API REST de HuancaRepair. Cada peticion indica su proposito y el codigo de estado esperado.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000/api" }
+  ],
+  "item": [
+    {
+      "name": "Productos",
+      "item": [
+        {
+          "name": "Listar productos (200)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/productos", "host": ["{{baseUrl}}"], "path": ["productos"] },
+            "description": "Devuelve todos los productos. Estado esperado: 200."
+          }
+        },
+        {
+          "name": "Filtrar productos por categoria (200)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/productos?categoria=Repuestos",
+              "host": ["{{baseUrl}}"],
+              "path": ["productos"],
+              "query": [{ "key": "categoria", "value": "Repuestos" }]
+            },
+            "description": "Devuelve los productos de una categoria. Estado esperado: 200."
+          }
+        },
+        {
+          "name": "Obtener producto por id (200)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/productos/1", "host": ["{{baseUrl}}"], "path": ["productos", "1"] },
+            "description": "Devuelve un producto. Estado esperado: 200."
+          }
+        },
+        {
+          "name": "Crear producto (201)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Cargador universal para laptop\",\n  \"descripcion\": \"Cargador de 65 W con puntas intercambiables.\",\n  \"categoria\": \"Accesorios\",\n  \"precio\": 89.9,\n  \"stock\": 20,\n  \"imagen_url\": \"https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=800&q=80\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/productos", "host": ["{{baseUrl}}"], "path": ["productos"] },
+            "description": "Crea un producto. Estado esperado: 201."
+          }
+        },
+        {
+          "name": "Crear producto con datos invalidos (400)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"A\",\n  \"precio\": -5\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/productos", "host": ["{{baseUrl}}"], "path": ["productos"] },
+            "description": "Valida los campos obligatorios. Estado esperado: 400."
+          }
+        },
+        {
+          "name": "Actualizar producto (200)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"precio\": 175.5,\n  \"stock\": 10\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/productos/1", "host": ["{{baseUrl}}"], "path": ["productos", "1"] },
+            "description": "Actualiza total o parcialmente un producto. Estado esperado: 200."
+          }
+        },
+        {
+          "name": "Actualizar producto inexistente (404)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"precio\": 100\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/productos/99999", "host": ["{{baseUrl}}"], "path": ["productos", "99999"] },
+            "description": "Id que no existe. Estado esperado: 404."
+          }
+        },
+        {
+          "name": "Eliminar producto (200)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/productos/6", "host": ["{{baseUrl}}"], "path": ["productos", "6"] },
+            "description": "Elimina un producto de forma fisica. Estado esperado: 200."
+          }
+        },
+        {
+          "name": "Eliminar producto inexistente (404)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/productos/99999", "host": ["{{baseUrl}}"], "path": ["productos", "99999"] },
+            "description": "Id que no existe. Estado esperado: 404."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Servicios",
+      "item": [
+        {
+          "name": "Listar servicios (200)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/servicios", "host": ["{{baseUrl}}"], "path": ["servicios"] },
+            "description": "Devuelve los servicios activos. Estado esperado: 200."
+          }
+        },
+        {
+          "name": "Crear servicio (201)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Cambio de conector de carga\",\n  \"descripcion\": \"Reemplazo del puerto de carga en celulares.\",\n  \"tipo_equipo\": \"Celulares\",\n  \"precio_desde\": 45,\n  \"tiempo_estimado\": \"1 hora\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/servicios", "host": ["{{baseUrl}}"], "path": ["servicios"] },
+            "description": "Crea un servicio. Estado esperado: 201."
+          }
+        },
+        {
+          "name": "Desactivar servicio (200)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/servicios/4", "host": ["{{baseUrl}}"], "path": ["servicios", "4"] },
+            "description": "Eliminacion logica. Estado esperado: 200."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Estado del servidor",
+      "item": [
+        {
+          "name": "Salud (200)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/salud", "host": ["{{baseUrl}}"], "path": ["salud"] },
+            "description": "Verifica que el servidor responde. Estado esperado: 200."
+          }
+        },
+        {
+          "name": "Ruta inexistente (404)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/inexistente", "host": ["{{baseUrl}}"], "path": ["inexistente"] },
+            "description": "Ruta que no existe. Estado esperado: 404."
+          }
+        }
+      ]
+    }
+  ]
+}
